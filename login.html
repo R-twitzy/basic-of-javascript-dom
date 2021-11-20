@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <script>
+        function cek() {
+		let username = document.getElementById('username').value;
+		let password = document.getElementById('password').value;
+        
+		if (username === "maulanarama" && password ==="2004") {
+			document.getElementById("pesan").innerHTML=
+            "<div class='alert alert-success'>Login Berhasil</div>";
+		}else{
+			document.getElementById("pesan").innerHTML=
+            "<div class='alert alert-danger'>Login Gagal</div>";
+		}
+	}
+     </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!--card header-->
+            <div class="card-header bg-dark">
+                <h3 class="text-white">Login Form</h3>
+            </div>
+            <h6 id="pesan"></h6>
+            <!--Card body-->
+            <div class="card-body">
+                Username
+                <input type="text" class="form-control mb-2" id="username">
+
+                Password
+                <input type="password" class="form-control mb-2" id="password">
+
+            </div>
+            <!--Card Footer-->
+            <div class="card-footer">
+                <button class="btn btn-primary btn-block" onclick="cek()">
+                    LOGIN
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

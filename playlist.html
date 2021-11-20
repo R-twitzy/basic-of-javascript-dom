@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+
+    <!-- Menghubungkan ke bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        function playButton(currentList) {
+            //currentList digunakan untuk menyimpan audio yang saat ini diputar
+            let musics = document.getElementsByTagName("audio");
+            for(let index = 0; index < musics.length; index++){
+                if (musics[index] !== currentList) {
+                    musics[index].pause();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- card header -->
+            <div class="card-header bg-dark">
+                <h3 class="text-white text-center">Playlist</h3>
+            </div>
+            <!-- card body -->
+            <div class="card-body">
+                <ul class="list-group">
+
+                    <!-- lagu pertama -->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <!--div untuk gambar-->
+                            <div class="col-lg-3 col-md-6">
+                                <img src="gambar/Oneiric_Diary_Digital.jpg"
+                                width="200">
+                            </div>
+                            <!--div untuk judul dan control lagu-->
+                            <div class="col-lg-9 col-md-6">
+                                <h5 class="text-dark">Iz*one - Secret Story of the Swan (Instrumental)</h5>
+                                <audio src="lagu/y2meta.com - IZ-ONE - SECRET STORY OF THE SWAN (OFFICIAL INSTRUMENTAL 99%) + DL (256 kbps).mp3"
+                                controls onplay="playButton(this)"></audio>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- lagu kedua -->
+                    <li class="list-group-item">
+                        <div class="row">
+                            <!--div untuk gambar-->
+                            <div class="col-lg-3 col-md-6">
+                                <img src="gambar/artworks-CyoziXF7YT97Lz1L-L441mw-t500x500.jpg"
+                                width="200">
+                            </div>
+                            <!--div untuk judul dan control lagu-->
+                            <div class="col-lg-9 col-md-6">
+                                <h5 class="text-dark">BTS - 00:00 Zero O'clock (Piano Cover)</h5>
+                                <audio src="lagu/y2mate.com - BTS  0000 Zero OClock  Piano Cover by Pianella Piano.mp3"
+                                controls onplay="playButton(this)"></audio>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
